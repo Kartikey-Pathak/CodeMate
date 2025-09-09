@@ -1,5 +1,6 @@
 import './App.css'
 import Hero from './Hero'
+import Issue from './Issue'
 import Nav from './Nav'
 
 function App() {
@@ -8,7 +9,10 @@ function App() {
   return (
     <>
       <header><Nav/></header>
-      <main><Hero/></main>
+      <main>
+        <Hero/>
+        <Issue/>
+      </main>
     </>
   )
 }
