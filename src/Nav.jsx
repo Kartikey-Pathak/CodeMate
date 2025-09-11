@@ -7,7 +7,7 @@ function Nav(){
     return(
         <div className=" w-full max-w-screen h-20 bg-black flex items-center justify-between">
           {/* logo */}
-          <div className=" flex items-center justify-center h-full m-5">
+          <div className=" flex items-center justify-center h-full m-5 cursor-pointer">
             <img src="./CodeMate.png" className=" h-full w-full object-cover" alt="" />
           </div>
          
