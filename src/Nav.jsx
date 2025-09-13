@@ -44,8 +44,9 @@ function Nav() {
         <div onClick={() => { open() }} className=" bg-[#262C36] cursor-pointer transition-all hover:opacity-80 rounded-xl mr-4 flex items-center justify-center size-10"><i className="fa-solid fa-ellipsis"></i></div>
         {tab?
         <div ref={box} className=" absolute z-[100] h-40 w-48 bg-black border-2 flex flex-col gap-1 items-start border-white/20 top-10 rounded-xl">
-          <div className="flex flex-row items-center m-5 mt-7 gap-3"><i className="fa-regular text-xl text-gray-500 fa-circle-user"></i><h1 className=" text-white">Profile</h1></div>
-          <div className="flex flex-row items-center ml-5 gap-3"><i className="fa-solid fa-users text-xl text-gray-500"></i><h1 className=" text-white">Community</h1></div>
+          <div className="flex flex-row items-center m-5 mt-7 gap-3"><i className="fa-regular text-xl text-gray-500 fa-circle-user"></i><h1 className=" hover:text-white/60 transition-all cursor-pointer text-white">Profile</h1></div>
+          
+          <Link to='/community'><div className="flex flex-row items-center ml-5 gap-3"><i className="fa-solid fa-users text-xl text-gray-500"></i><h1 className=" hover:text-white/60 transition-all cursor-pointer text-white">Community</h1></div></Link>
         </div>
         :null
         }

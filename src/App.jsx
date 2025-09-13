@@ -6,6 +6,7 @@ import Nav from './Nav'
 import { Form, Route, Routes } from 'react-router-dom'
 import User from './User'
 import IssueForm from './IssueForm'
+import Community from './Community'
 function App() {
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/sign-up' element={<Create/>}/>
         <Route path='/user' element={<User/>}/>
         <Route path='/form' element={<IssueForm/>}/>
+         <Route path='/community' element={<Community/>}/>
 
       </Routes>
     </>
