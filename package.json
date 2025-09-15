@@ -12,7 +12,6 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@heroui/card": "^2.2.24",
-    "@heroui/react": "^2.8.3",
     "@tailwindcss/vite": "^4.1.13",
     "daisyui": "^5.1.9",
     "react": "^19.1.1",

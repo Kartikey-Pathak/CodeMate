@@ -2,6 +2,8 @@ import { use, useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import People from './People';
+import { Link } from 'react-router-dom';
+
 
 gsap.registerPlugin(useGSAP);
 
@@ -14,9 +16,9 @@ function Tab() {
     title: "Bug: Dropdown animation not closing smoothly",
     des: "When toggling the Author filter dropdown, the animation for closing is abrupt and doesn’t match the opening transition. It would be better to add a smooth reverse animation when the dropdown is closed.",
     link: "https://github.com/username/issue-tracker-ui",
-    name:"Pathak"
+    name: "Pathak"
   }]);
-
+ 
   const open = () => {
     settab(!tab);
   }
@@ -65,16 +67,15 @@ function Tab() {
           </div> :
           // issues Part
           <div className=' h-full w-full flex flex-col ' >
-            {issues.map((item,idx)=>(
-            <div key={idx} className=' h-[4.5rem] w-full border-t-1 grid grid-rows-2  border-b-1 border-gray-700'>
-              <div className=' flex flex-row m-6 items-center gap-3 w-full'><i className=" text-green-500 font-semibold fa-solid fa-circle-dot"></i>
-              <h1 className=' font-semibold text-white text-[1rem] md:text-xl cursor-pointer hover:text-blue-400 hover:underline transition-all'>{item.title}</h1>
+            {issues.map((item, idx) => (
+              <div key={idx} className=' h-[4.5rem] w-full border-t-1 grid grid-rows-2  border-b-1 border-gray-700'>
+                <div className=' flex flex-row m-6 items-center gap-3 w-full'><i className=" text-green-500 font-semibold fa-solid fa-circle-dot"></i>
+                  <Link to='/page' state={{ issue: item }}><h1 className=' font-semibold text-white text-[1rem] md:text-xl cursor-pointer hover:text-blue-400 hover:underline transition-all'>{item.title}</h1></Link>
+                </div>
+                <h1 className='  text-[0.8rem] md:text-sm  md:m-2 text-gray-400 ml-28 mt-3 md:ml-15'>{item.name} opened this issue</h1>
               </div>
-              <h1 className='  text-[0.8rem] md:text-sm  md:m-2 text-gray-400 ml-28 mt-3 md:ml-15'>{item.name} opened this issue</h1>
-          
-            </div>
             ))
-           } 
+            }
 
           </div>
         }

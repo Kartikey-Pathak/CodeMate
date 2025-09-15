@@ -7,6 +7,7 @@ import { Form, Route, Routes } from 'react-router-dom'
 import User from './User'
 import IssueForm from './IssueForm'
 import Community from './Community'
+import Page from './Page'
 function App() {
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/user' element={<User/>}/>
         <Route path='/form' element={<IssueForm/>}/>
          <Route path='/community' element={<Community/>}/>
+         <Route path='/page' element={<Page/>}/>
 
       </Routes>
     </>
