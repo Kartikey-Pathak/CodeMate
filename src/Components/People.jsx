@@ -6,10 +6,10 @@ function People({box}){
 
                 <div className=' w-full flex-col gap-10 flex'>
 
-                  <div className=' h-10 w-full rounded-xl bg-[#15191F] flex flex-row items-center '> <div className=' m-2 size-8 bg-amber-50 rounded-full flex items-center justify-center'><i className=" m-2 fa-solid fa-user"></i></div><h1 className=' font-semibold text-white'>Kartikey Pathak</h1></div>
-                  <div className=' h-10 w-full rounded-xl bg-[#15191F] flex flex-row items-center '> <div className=' m-2 size-8 bg-amber-50 rounded-full flex items-center justify-center'><i className=" m-2 fa-solid fa-user"></i></div><h1 className=' font-semibold text-white'>Kartikey Pathak</h1></div>
-                  <div className=' h-10 w-full rounded-xl bg-[#15191F] flex flex-row items-center '> <div className=' m-2 size-8 bg-amber-50 rounded-full flex items-center justify-center'><i className=" m-2 fa-solid fa-user"></i></div><h1 className=' font-semibold text-white'>Kartikey Pathak</h1></div>
-                  <div className=' h-10 w-full rounded-xl bg-[#15191F] flex flex-row items-center '> <div className=' m-2 size-8 bg-amber-50 rounded-full flex items-center justify-center'><i className=" m-2 fa-solid fa-user"></i></div><h1 className=' font-semibold text-white'>Kartikey Pathak</h1></div>
+                  <div className=' h-10 w-full rounded-xl bg-[#15191F] flex flex-row items-center '> <div className=' m-2 size-8 bg-black rounded-full flex items-center justify-center'><i className=" m-2 fa-solid fa-user text-gray-400 "></i></div><h1 className=' font-semibold text-white'>Kartikey Pathak</h1></div>
+                  <div className=' h-10 w-full rounded-xl bg-[#15191F] flex flex-row items-center '> <div className=' m-2 size-8 bg-black rounded-full flex items-center justify-center'><i className=" m-2 fa-solid fa-user text-gray-400"></i></div><h1 className=' font-semibold text-white'>Kartikey Pathak</h1></div>
+                  <div className=' h-10 w-full rounded-xl bg-[#15191F] flex flex-row items-center '> <div className=' m-2 size-8 bg-black rounded-full flex items-center justify-center'><i className=" m-2 fa-solid fa-user text-gray-400"></i></div><h1 className=' font-semibold text-white'>Kartikey Pathak</h1></div>
+                  <div className=' h-10 w-full rounded-xl bg-[#15191F] flex flex-row items-center '> <div className=' m-2 size-8 bg-black rounded-full flex items-center justify-center'><i className=" m-2 fa-solid fa-user text-gray-400"></i></div><h1 className=' font-semibold text-white'>Kartikey Pathak</h1></div>
 
                 </div>
 
