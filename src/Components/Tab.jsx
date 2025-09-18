@@ -15,7 +15,7 @@ function Tab() {
   const [issues, setissues] = useState([{
     title: "Bug: Dropdown animation not closing smoothly",
     des: "When toggling the Author filter dropdown, the animation for closing is abrupt and doesn't match the opening transition. It would be better to add a smooth reverse animation when the dropdown is closed.",
-    link: "https://github.com/username/issue-tracker-ui",
+    link: "https://in.linkedin.com/",
     name: "Pathak"
   }]);
  
