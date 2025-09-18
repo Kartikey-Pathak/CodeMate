@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Nav from "./Nav";
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(useGSAP);
 
 
@@ -9,6 +12,11 @@ function Page() {
   const location = useLocation();
   const { issue } = location.state || {};
   const [copy, setcopy] = useState();
+    const navigate = useNavigate();
+
+  //the Clicked button state
+  const [chatbtn,setchat] =useState(false);
+  const [closebtn,setclose] =useState(false);
 
   const box = useRef(null);
 
@@ -44,9 +52,20 @@ function Page() {
     }
   }, [copy]);
 
+  function handleclose(){
+    console.log("Close the issue")
+    //backend request to remove
+
+
+
+
+    //navigate to root page
+  }
+
 
   return (
     <div className=" w-full max-w-screen h-full ">
+      <Nav/>
       <br />
       <div className=" m-8 ml-20 flex gap-2 flex-col">
         <h1 className="   text-4xl  text-white">{issue.title}</h1>
@@ -55,8 +74,8 @@ function Page() {
 
       <div className=" flex justify-center flex-col items-center">
         <div className=" flex h-full w-[90%] border-gray-800 border-t-2">
-          <div className=" h-screen w-full flex flex-row justify-center gap-3 mt-6">
-            <div className=' m-2 size-15 bg-black rounded-full flex items-center justify-center'><i className=" text-2xl m-2 fa-solid fa-user text-gray-400 "></i></div>
+          <div className=" h-screen w-full flex flex-row justify-center md:gap-3 mt-6">
+            <div className=' m-2 size-10 md:size-15 bg-black rounded-full flex items-center justify-center'><i className=" text-xl md:text-2xl m-2 fa-solid fa-user text-gray-400 "></i></div>
             <div className=" h-full rounded-xl  border-2 border-gray-700 w-[90%] flex-col flex items-center  relative overflow-y-scroll "><div className=" absolute top-0 border-b-2 rounded-t-xl border-gray-700 h-10 w-full bg-[#151B23] flex items-center"><div className=" h-[80%] w-20 rounded-xl m-2 bg-green-700 flex flex-row justify-evenly items-center text-center"><i className=" text-white font-semibold fa-solid fa-circle-dot"></i><h1 className=" text-center font-semibold">open</h1></div></div>
 
               {/* the content */}
@@ -69,8 +88,8 @@ function Page() {
                 <div className=" flex justify-center">
                   <div className=" h-10 w-[98%] md:w-[95%] lg:w-[70%] xl:w-[60%] flex-row  flex items-center justify-evenly gap-3  md:gap-10 bg-white/10 rounded-xl">
                     <i className=" text-gray-100 text-2xl md:text-3xl font-semibold fa-brands fa-github"></i>
-                    <a href={issue.title}>
-                      <h2 className=" text-[1rem] md:text-2xl text-blue-500 hover:underline hover:text-blue-400 cursor-pointer transition-all">{issue.link}</h2></a>
+                    <a href={issue.link}>
+                      <h2 className=" text-[0.9rem] md:text-2xl text-blue-500 hover:underline hover:text-blue-400 cursor-pointer transition-all">{issue.link}</h2></a>
                     <i onClick={copyToClipboard} className=" text-2xl md:text-3xl cursor-pointer hover:text-gray-400 hover:shadow-2xl shadow-black backdrop-blur-2xl transition-all font-semibold text-gray-500 fa-solid fa-copy"></i>
                   </div>
                 </div>
@@ -97,16 +116,18 @@ function Page() {
         </div>
 
         {/* the buttons */}
-        <div className=" w-[90%] md:w-[80%] m-10 flex items-center flex-row justify-between border-2">
-          <div className="  h-10 w-40 hover:bg-white/20 transition-all cursor-pointer bg-white/12 rounded-2xl flex flex-row gap-3 items-center justify-center ">
+
+        <div className=" w-[90%] md:w-[80%] m-10 flex items-center flex-row justify-between">
+          <div onClick={()=>{setclose(true); handleclose()}} className={`  h-10 w-40 hover:bg-white/20  transition-all cursor-pointer ${closebtn?"bg-white/20":"bg-white/12"} rounded-2xl flex flex-row gap-3 items-center justify-center `}>
           <i className=" text-2xl font-semibold text-red-600 fa-solid fa-xmark"></i>
           <h1>Close issue</h1>
           </div>
+         
 
-          <div className="  h-10 w-40 cursor-pointer hover:bg-green-700 transition-all bg-green-600 rounded-2xl flex flex-row gap-3 items-center justify-center ">
+         <Link to='/chat'  state={{ name: issue.name }}  ><div onClick={()=>{setchat(true)}} className={`  h-10 w-40 cursor-pointer hover:bg-green-700 transition-all ${chatbtn?"bg-green-700":"bg-green-600"} rounded-2xl flex flex-row gap-3 items-center justify-center `}>
           <i className=" text-2xl font-semibold text-white fa-solid fa-message"></i>
           <h1 className=" font-semibold text-white">Chats</h1>
-          </div>
+          </div></Link> 
         </div>
         {/* the buttons */}
 
