@@ -9,6 +9,7 @@ import IssueForm from './IssueForm'
 import Community from './Community'
 import Page from './Page'
 import Chat from './Chat'
+import Profile from './Profile'
 function App() {
 
 
@@ -37,6 +38,7 @@ function App() {
          {/* chats part */}
 
          <Route path='/page' element={<Page/>}/>
+         <Route path='/profile' element={<Profile/>}/>
 
       </Routes>
     </>
